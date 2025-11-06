@@ -1,0 +1,39 @@
+<nav th:fragment="navbarFragment" class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+        <!-- 로고 클릭 시 메인 화면으로 이동 -->
+        <a class="navbar-brand" href="/books">
+            <img src="/images/book store.png" alt="도서리뷰 앱 로고" style="width: 120px; height: auto;">
+        </a>
+        
+        <!-- 메뉴 아이템들 -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                
+                <!-- 인증되지 않은 사용자에게 보여줄 메뉴 -->
+                <li class="nav-item" th:if="${#authorization.expression('!isAuthenticated()')}">
+                    <a class="nav-link btn btn-outline-primary rounded-pill mx-2" href="/login">
+                        <i class="bi bi-box-arrow-in-right"></i> 로그인
+                    </a>
+                </li>
+                <li class="nav-item" th:if="${#authorization.expression('!isAuthenticated()')}">
+                    <a class="nav-link btn btn-outline-success rounded-pill mx-2" href="/register">
+                        <i class="bi bi-person-plus"></i> 회원가입
+                    </a>
+                </li>
+                
+                <!-- 인증된 사용자에게 보여줄 메뉴 -->
+                <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
+                    <span class="nav-link text-dark fw-bold" th:text="${#authentication.name + '님'}"></span>
+                </li>
+                <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
+                    <a class="nav-link btn btn-outline-danger rounded-pill mx-2" href="/logout">
+                        <i class="bi bi-box-arrow-right"></i> 로그아웃
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 부트스트랩 아이콘 사용을 위한 CDN 추가 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
