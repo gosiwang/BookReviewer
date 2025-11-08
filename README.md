@@ -102,7 +102,7 @@ Spring Boot, Spring Security, Spring Data JPA를 활용하여 구현한 도서 �
 1.  **Git Clone:**
 
     ```bash
-    git clone [레포지토리_URL]
+    git clone https://github.com/gosiwang/BookReviewer.git
     cd bookreview
     ```
 
