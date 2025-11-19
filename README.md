@@ -2,6 +2,8 @@
 
 Spring Boot, Spring Security, Spring Data JPA를 활용하여 구현한 도서 검색 및 리뷰 웹 애플리케이션입니다. 사용자는 도서를 검색하고, 로그인 후 원하는 도서에 대한 리뷰를 작성, 수정, 삭제할 수 있습니다.
 
+![Animation](https://github.com/user-attachments/assets/481a0781-e864-4232-bc3d-b5cf46130773)
+
 ## 📅 개발 기간
 
   * **총 개발 기간:** 2024년 11월 20일 \~ 2024년 11월 29일
